@@ -2,13 +2,13 @@ puts "Сколько покемонов добавить?"
 num = gets.to_i
 
 def add_pokemon(number)
-  result = {}
+  result = []
   number.times do 
     puts "Введите имя покемона"
     name = gets.chomp
     puts "Введите цвет покемона"
     color = gets.chomp
-    result[name] = color
+    result << {name: color}
   end
   result
 end
