@@ -8,7 +8,7 @@ def add_pokemon(number)
     name = gets.chomp
     puts "Введите цвет покемона"
     color = gets.chomp
-    result << {name: color}
+    result << {name: name, color: color}
   end
   result
 end
