@@ -1,0 +1,34 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Labs reports</h1>
+
+<%= link_to "Add report", new_report_path %>
+<%= link_to "Add user", new_user_path %>
+
+<br>
+
+<div id="reports">
+  <% @reports.each do |report| %>
+    <hr>
+    <div>
+      <h4>
+        <%= report.title %>
+      </h4>
+      <div>
+        <i>email: <%= report.user.email%></i>
+      <div>
+      <%= report.description %>
+    </div>
+
+    <% if report.mark.nil? %>
+      <%= button_to "Add mark", report_mark_path(report.id) %>
+    <% else %>
+      <i>grade: <%= report.mark %></i>
+    <% end %>
+
+    <%= button_to "Remove", report, method: :delete %>
+
+    
+    
+  <% end %>
+</div>

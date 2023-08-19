@@ -1,0 +1,13 @@
+<h3> choose mark</h3>
+<%= form_with(model: @report) do |form| %>
+
+  <div>
+    <%= form.select :mark, options_for_select(%w[A B C D E FX F], "A")  %>
+  </div>
+
+
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
